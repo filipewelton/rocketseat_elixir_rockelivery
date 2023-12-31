@@ -1,0 +1,15 @@
+defmodule Rockelivery.Repo.Migrations.CreateItemsTable do
+  use Ecto.Migration
+
+  def change do
+    create table(:items, primary_key: false) do
+      add :id, :binary_id, primary_key: true
+      add :category, :item_category
+      add :description, :string
+      add :price, :decimal
+      add :photo, :string
+
+      timestamps()
+    end
+  end
+end
