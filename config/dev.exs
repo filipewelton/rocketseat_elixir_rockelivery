@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :rockelivery, Rockelivery.Repo,
-  username: "phoenix",
-  password: "phoenix",
+  username: "postgres",
+  password: "postgres",
   hostname: "localhost",
   database: "app",
   stacktrace: true,

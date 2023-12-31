@@ -1,12 +1,18 @@
 import Config
 
 config :rockelivery, Rockelivery.Repo,
-  username: "phoenix",
-  password: "phoenix",
+  username: "postgres",
+  password: "postgres",
   hostname: "localhost",
   database: "rockelivery_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
+
+if System.get_env("GITHUB_ACTIONS") do
+  config :rockelivery, Rockelivery.Repo,
+    username: "postgres",
+    password: "postgres"
+end
 
 config :rockelivery, RockeliveryWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
