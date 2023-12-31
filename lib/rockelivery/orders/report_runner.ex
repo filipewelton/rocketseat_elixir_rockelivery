@@ -25,7 +25,7 @@ defmodule Rockelivery.Orders.ReportRunner do
     {:noreply, state}
   end
 
-  def schedule_report_generation() do
+  def schedule_report_generation do
     Process.send_after(self(), "generate", 1000 * 10)
   end
 end

@@ -1,8 +1,8 @@
 defmodule RockeliveryWeb.FallbackController do
   use RockeliveryWeb, :controller
 
-  alias RockeliveryWeb.ErrorJSON
   alias Rockelivery.Error
+  alias RockeliveryWeb.ErrorJSON
 
   def call(connection, %Error{status: status, result: result}) do
     connection

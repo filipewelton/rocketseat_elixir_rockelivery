@@ -1,5 +1,5 @@
 defmodule Rockelivery.Items.Create do
-  alias Rockelivery.{Repo, Item, Error}
+  alias Rockelivery.{Error, Item, Repo}
 
   def call(params) do
     params

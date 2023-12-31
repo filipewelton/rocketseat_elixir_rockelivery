@@ -3,4 +3,3 @@ defmodule Rockelivery.ViaCep.Behavior do
 
   @callback get_cep_info(String.t()) :: {:ok, map()} | {:erro, Error.t()}
 end
-

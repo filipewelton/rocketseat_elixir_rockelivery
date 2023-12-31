@@ -13,7 +13,7 @@ defmodule RockeliveryWeb.Auth.Guardian do
   end
 
   def authenticate(%{"id" => id, "password" => password}) do
-    with {:ok, %User{password_hash: hash} = user} = Get.by_id(id),
+    with {:ok, %User{password_hash: hash} = user} <- Get.by_id(id),
          true <- Pbkdf2.verify_pass(password, hash),
          {:ok, token, _claims} <- encode_and_sign(user) do
       {:ok, token}

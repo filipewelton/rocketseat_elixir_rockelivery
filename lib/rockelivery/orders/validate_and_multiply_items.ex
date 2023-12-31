@@ -10,15 +10,16 @@ defmodule Rockelivery.Orders.ValidateAndMultiplyItems do
     |> duplicate_items(items_map, items_params)
   end
 
-  defp duplicate_items(true, _items, _items_params) do 
+  defp duplicate_items(true, _items, _items_params) do
     {:error, Error.build(:bad_request, "Invalid ID(s)")}
   end
 
   defp duplicate_items(false, items, items_params) do
-    items = Enum.reduce(items_params, [], fn %{"id" => id, "quantity" => quantity}, acc ->
-      item = Map.get(items, id)
-      acc ++ List.duplicate(item, quantity)
-    end)
+    items =
+      Enum.reduce(items_params, [], fn %{"id" => id, "quantity" => quantity}, acc ->
+        item = Map.get(items, id)
+        acc ++ List.duplicate(item, quantity)
+      end)
 
     {:ok, items}
   end

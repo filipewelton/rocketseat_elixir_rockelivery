@@ -3,8 +3,8 @@ defmodule RockeliveryWeb.UsersController do
 
   import Rockelivery
 
-  alias RockeliveryWeb.FallbackController
   alias RockeliveryWeb.Auth.Guardian
+  alias RockeliveryWeb.FallbackController
 
   action_fallback FallbackController
 

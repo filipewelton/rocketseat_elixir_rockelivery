@@ -2,8 +2,8 @@ defmodule Rockelivery.Orders.Create do
   import Ecto.Query
 
   alias Rockelivery.Order
-  alias Rockelivery.{Repo, Item, Item, Error}
   alias Rockelivery.Orders.ValidateAndMultiplyItems
+  alias Rockelivery.{Error, Item, Item, Repo}
 
   def call(%{"items" => items_params} = params) do
     items_ids = Enum.map(items_params, fn item -> item["id"] end)

@@ -1,10 +1,10 @@
 defmodule Rockelivery do
-  alias Rockelivery.Users.Create, as: UserCreate
-  alias Rockelivery.Users.Get, as: UserGet
-  alias Rockelivery.Users.Delete, as: UserDelete
-  alias Rockelivery.Users.Update, as: UpdateUser
   alias Rockelivery.Items.Create, as: ItemCreate
   alias Rockelivery.Orders.Create, as: OrderCreate
+  alias Rockelivery.Users.Create, as: UserCreate
+  alias Rockelivery.Users.Delete, as: UserDelete
+  alias Rockelivery.Users.Get, as: UserGet
+  alias Rockelivery.Users.Update, as: UpdateUser
 
   defdelegate create_user(params), to: UserCreate, as: :call
 

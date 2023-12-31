@@ -1,5 +1,5 @@
 defmodule Rockelivery.Users.Update do
-  alias Rockelivery.{Repo, User, Error}
+  alias Rockelivery.{Error, Repo, User}
 
   def call(params) do
     %{"id" => id} = params
