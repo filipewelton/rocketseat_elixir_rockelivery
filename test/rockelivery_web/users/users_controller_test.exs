@@ -35,7 +35,6 @@ defmodule RockeliveryWeb.UsersControllerTest do
       conn
       |> post("/api/users", params)
       |> json_response(201)
-      |> IO.inspect()
     end
 
     test "when there is some error, returns error", %{conn: conn} do
